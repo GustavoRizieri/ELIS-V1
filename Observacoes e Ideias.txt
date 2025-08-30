@@ -6,3 +6,13 @@ Vamos criarum Roadmap para fazer esse funcionamento funcionar com perfeição, m
 1 Criar o repositorio no Github ( faça correto e não va alem disso até ser dado o comando do proximo passo )
 
 2 Passo 2 antes de fazer o commit no Github o trae-ide não esta salvando os arquivos, ele tem que salvar automatico para fazer o commit ( resolva essa questão )
+
+3
+
+4 No projeto vamos usar Phyton
+As instalações de bibliotecas queremos sempre fazer no ambiente de projeto e não global no Phyton
+
+5 Organização
+Quermos criar uma amarração que a IA consigo entedender corretamente para executar as tarefas, vamos usar como exempplo o pré commit que fizemos no passo 2
+Quando eu pedir para a IA fazer um commit no git, ela tem que identificar que ja existe um fluxo para executar essa tarefa como no exemplo a gente criou o pré commit para resolver o problema de salvamento
+

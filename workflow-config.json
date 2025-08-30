@@ -1,0 +1,258 @@
+{
+  "project_info": {
+    "name": "ELIS-V1",
+    "version": "1.0.0",
+    "step": 5,
+    "description": "Sistema de Automação Inteligente para IA",
+    "collaborators": ["Marduka", "Gustavo"]
+  },
+  "ai_workflow_mapping": {
+    "git_operations": {
+      "commit": {
+        "description": "Fazer commit no Git com pré-processamento automático",
+        "keywords": ["commit", "fazer commit", "commitar", "salvar no git"],
+        "workflow": "git_commit_flow",
+        "script": "scripts/git-commit-flow.bat",
+        "pre_actions": [
+          "auto_save_files",
+          "check_git_status",
+          "validate_changes"
+        ],
+        "post_actions": [
+          "update_notifications",
+          "log_activity"
+        ]
+      },
+      "push": {
+        "description": "Enviar commits para repositório remoto",
+        "keywords": ["push", "enviar", "subir", "publicar"],
+        "workflow": "git_push_flow",
+        "script": "scripts/git-push-flow.bat",
+        "pre_actions": [
+          "check_unpushed_commits",
+          "validate_remote_connection"
+        ]
+      },
+      "pull": {
+        "description": "Baixar atualizações do repositório remoto",
+        "keywords": ["pull", "baixar", "atualizar", "sincronizar"],
+        "workflow": "git_pull_flow",
+        "script": "scripts/git-pull-flow.bat",
+        "pre_actions": [
+          "check_local_changes",
+          "backup_current_state"
+        ]
+      },
+      "status": {
+        "description": "Verificar status do repositório Git",
+        "keywords": ["status", "estado", "verificar git", "situação"],
+        "workflow": "git_status_flow",
+        "script": "github-monitor.ps1",
+        "parameters": "-Action status"
+      }
+    },
+    "python_operations": {
+      "activate_environment": {
+        "description": "Ativar ambiente virtual Python",
+        "keywords": ["ativar python", "ambiente virtual", "venv", "activate"],
+        "workflow": "python_activate_flow",
+        "script": "activate-python.bat"
+      },
+      "install_dependencies": {
+        "description": "Instalar dependências Python",
+        "keywords": ["instalar dependências", "pip install", "requirements"],
+        "workflow": "python_install_flow",
+        "script": "scripts/install-dependencies.bat"
+      },
+      "run_tests": {
+        "description": "Executar testes do projeto",
+        "keywords": ["executar testes", "rodar testes", "testar", "tests"],
+        "workflow": "python_test_flow",
+        "script": "scripts/run-tests.bat"
+      },
+      "run_main": {
+        "description": "Executar módulo principal do projeto",
+        "keywords": ["executar main", "rodar projeto", "iniciar", "run main"],
+        "workflow": "python_run_flow",
+        "script": "scripts/run-main.bat"
+      }
+    },
+    "monitoring_operations": {
+      "check_github": {
+        "description": "Verificar atualizações do GitHub",
+        "keywords": ["verificar github", "monitorar", "check updates", "atualizações"],
+        "workflow": "github_monitor_flow",
+        "script": "github-monitor.ps1",
+        "parameters": "-Action check"
+      },
+      "start_monitoring": {
+        "description": "Iniciar monitoramento contínuo",
+        "keywords": ["iniciar monitoramento", "monitor contínuo", "start monitoring"],
+        "workflow": "github_monitor_continuous",
+        "script": "start-github-monitor.bat"
+      },
+      "view_notifications": {
+        "description": "Ver notificações do sistema",
+        "keywords": ["ver notificações", "notifications", "alertas", "avisos"],
+        "workflow": "view_notifications_flow",
+        "script": "github-monitor.ps1",
+        "parameters": "-Action notifications"
+      }
+    },
+    "project_operations": {
+      "project_status": {
+        "description": "Ver status completo do projeto",
+        "keywords": ["status do projeto", "situação", "overview", "resumo"],
+        "workflow": "project_status_flow",
+        "script": "scripts/project-status.bat"
+      },
+      "setup_environment": {
+        "description": "Configurar ambiente completo do projeto",
+        "keywords": ["configurar ambiente", "setup", "inicializar", "preparar"],
+        "workflow": "setup_environment_flow",
+        "script": "scripts/setup-environment.bat"
+      },
+      "clean_project": {
+        "description": "Limpar arquivos temporários e cache",
+        "keywords": ["limpar projeto", "clean", "cache", "temporários"],
+        "workflow": "clean_project_flow",
+        "script": "scripts/clean-project.bat"
+      }
+    }
+  },
+  "workflow_definitions": {
+    "git_commit_flow": {
+      "steps": [
+        {
+          "action": "auto_save",
+          "description": "Salvar todos os arquivos automaticamente",
+          "command": "echo Salvando arquivos automaticamente..."
+        },
+        {
+          "action": "git_add",
+          "description": "Adicionar arquivos ao staging",
+          "command": "git add ."
+        },
+        {
+          "action": "git_status",
+          "description": "Verificar status antes do commit",
+          "command": "git status"
+        },
+        {
+          "action": "git_commit",
+          "description": "Fazer commit com mensagem",
+          "command": "git commit -m \"[AUTO] Commit via sistema de automação\"",
+          "interactive": true,
+          "prompt_message": "Digite a mensagem do commit:"
+        }
+      ]
+    },
+    "python_activate_flow": {
+      "steps": [
+        {
+          "action": "check_venv",
+          "description": "Verificar se ambiente virtual existe",
+          "command": "if exist .venv\\Scripts\\activate.bat (echo Ambiente encontrado) else (echo Criando ambiente...)"
+        },
+        {
+          "action": "activate_venv",
+          "description": "Ativar ambiente virtual",
+          "command": "call activate-python.bat"
+        }
+      ]
+    },
+    "github_monitor_flow": {
+      "steps": [
+        {
+          "action": "check_connection",
+          "description": "Verificar conexão com GitHub",
+          "command": "git ls-remote --heads origin"
+        },
+        {
+          "action": "run_monitor",
+          "description": "Executar monitoramento",
+          "command": "powershell -ExecutionPolicy Bypass -File github-monitor.ps1 -Action check"
+        }
+      ]
+    }
+  },
+  "ai_recognition_patterns": {
+    "intent_detection": {
+      "commit_intent": {
+        "patterns": [
+          "fazer commit",
+          "commitar",
+          "salvar no git",
+          "commit das alterações",
+          "fazer um commit",
+          "commitar as mudanças"
+        ],
+        "confidence_threshold": 0.8,
+        "action": "git_commit_flow"
+      },
+      "status_intent": {
+        "patterns": [
+          "verificar status",
+          "como está o projeto",
+          "situação do git",
+          "status do repositório",
+          "ver estado"
+        ],
+        "confidence_threshold": 0.7,
+        "action": "git_status_flow"
+      },
+      "python_intent": {
+        "patterns": [
+          "ativar python",
+          "usar ambiente virtual",
+          "executar python",
+          "rodar o projeto",
+          "iniciar ambiente"
+        ],
+        "confidence_threshold": 0.8,
+        "action": "python_activate_flow"
+      }
+    }
+  },
+  "automation_settings": {
+    "auto_save": {
+      "enabled": true,
+      "before_git_operations": true,
+      "interval_seconds": 30
+    },
+    "smart_suggestions": {
+      "enabled": true,
+      "suggest_workflows": true,
+      "learn_from_usage": true
+    },
+    "error_handling": {
+      "retry_failed_operations": true,
+      "max_retries": 3,
+      "fallback_to_manual": true
+    },
+    "logging": {
+      "log_all_workflows": true,
+      "log_file": "workflow-automation.log",
+      "log_level": "INFO"
+    }
+  },
+  "integration": {
+    "existing_systems": {
+      "github_monitor": {
+        "integrated": true,
+        "script_path": "github-monitor.ps1",
+        "config_file": "notification-config.json"
+      },
+      "python_environment": {
+        "integrated": true,
+        "activation_script": "activate-python.bat",
+        "requirements_file": "requirements.txt"
+      },
+      "auto_save_system": {
+        "integrated": true,
+        "pre_commit_hook": true,
+        "trae_ide_integration": true
+      }
+    }
+  }
+}

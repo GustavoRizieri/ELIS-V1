@@ -1,0 +1,106 @@
+{
+  "project": {
+    "name": "ELIS-V1",
+    "repository": "https://github.com/GustavoRizieri/ELIS-V1.git",
+    "collaborators": ["Marduka", "Gustavo"]
+  },
+  "monitoring": {
+    "enabled": true,
+    "check_interval_minutes": 5,
+    "auto_fetch": true,
+    "log_file": "github-activity.log",
+    "max_log_size_mb": 10
+  },
+  "notifications": {
+    "new_commits": {
+      "enabled": true,
+      "priority": "high",
+      "show_details": true,
+      "sound_alert": false
+    },
+    "unpushed_commits": {
+      "enabled": true,
+      "priority": "medium",
+      "reminder_interval_minutes": 30
+    },
+    "sync_status": {
+      "enabled": true,
+      "show_on_startup": true,
+      "show_statistics": true
+    },
+    "collaboration_alerts": {
+      "enabled": true,
+      "notify_on_other_author_commits": true,
+      "show_author_activity": true
+    }
+  },
+  "reports": {
+    "daily_summary": {
+      "enabled": true,
+      "time": "18:00",
+      "include_statistics": true
+    },
+    "commit_details": {
+      "max_commits_shown": 10,
+      "show_file_changes": false,
+      "show_commit_hash": true,
+      "date_format": "dd/MM/yyyy HH:mm"
+    },
+    "activity_tracking": {
+      "track_commit_frequency": true,
+      "track_collaboration_patterns": true,
+      "generate_weekly_report": true
+    }
+  },
+  "integration": {
+    "trae_ide": {
+      "auto_save_before_check": true,
+      "show_notifications_in_ide": true,
+      "integration_with_ai": true
+    },
+    "git_hooks": {
+      "pre_commit_check": true,
+      "pre_push_check": true,
+      "auto_update_check": true
+    },
+    "python_environment": {
+      "auto_activate_venv": true,
+      "check_requirements": true,
+      "run_tests_before_commit": false,
+      "virtual_env_path": ".venv",
+      "requirements_file": "requirements.txt"
+    }
+  },
+  "display": {
+    "colors": {
+      "success": "Green",
+      "warning": "Yellow",
+      "error": "Red",
+      "info": "Cyan",
+      "highlight": "Magenta"
+    },
+    "symbols": {
+      "new_commit": "🔸",
+      "alert": "🔔",
+      "warning": "⚠️",
+      "success": "✅",
+      "sync": "🔄",
+      "upload": "📤",
+      "download": "📥",
+      "stats": "📊",
+      "rocket": "🚀"
+    },
+    "format": {
+      "show_borders": true,
+      "compact_mode": false,
+      "show_timestamps": true
+    }
+  },
+  "advanced": {
+    "cache_duration_minutes": 15,
+    "retry_attempts": 3,
+    "timeout_seconds": 30,
+    "debug_mode": false,
+    "performance_monitoring": false
+  }
+}

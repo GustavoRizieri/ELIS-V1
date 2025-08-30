@@ -1,0 +1,48 @@
+# ELIS-V1 - Dependências Python
+# Arquivo para gerenciar bibliotecas do projeto
+# Instale com: pip install -r requirements.txt
+
+# Bibliotecas básicas para desenvolvimento
+pip>=23.0
+setuptools>=68.0
+wheel>=0.40
+
+# Bibliotecas comuns para projetos Python
+# Descomente conforme necessário:
+
+# Para desenvolvimento web
+# flask>=2.3.0
+# django>=4.2.0
+# fastapi>=0.100.0
+
+# Para análise de dados
+# pandas>=2.0.0
+# numpy>=1.24.0
+# matplotlib>=3.7.0
+# seaborn>=0.12.0
+
+# Para machine learning
+# scikit-learn>=1.3.0
+# tensorflow>=2.13.0
+# torch>=2.0.0
+
+# Para automação e scraping
+# requests>=2.31.0
+# beautifulsoup4>=4.12.0
+# selenium>=4.10.0
+
+# Para testes
+# pytest>=7.4.0
+# pytest-cov>=4.1.0
+
+# Para formatação de código
+# black>=23.7.0
+# flake8>=6.0.0
+# isort>=5.12.0
+
+# Para documentação
+# sphinx>=7.1.0
+# mkdocs>=1.5.0
+
+# Adicione suas dependências específicas abaixo:
+# exemplo: requests==2.31.0
