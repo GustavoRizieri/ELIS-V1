@@ -14,3 +14,10 @@ Este é um projeto em desenvolvimento colaborativo que utiliza o editor Trae-IDE
 ## Status
 
 Projeto em fase inicial de configuração.
+
+## Configurações de Salvamento Automático
+
+O projeto agora inclui:
+- Configuração automática de salvamento no Trae-IDE
+- Pre-commit hook para garantir que arquivos sejam salvos antes de commits
+- Integração melhorada para trabalho colaborativo com IA

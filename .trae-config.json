@@ -1,0 +1,22 @@
+{
+  "autoSave": {
+    "enabled": true,
+    "delay": 1000,
+    "onFocusChange": true,
+    "onWindowChange": true
+  },
+  "git": {
+    "autoSaveBeforeCommit": true,
+    "autoSaveBeforePush": true,
+    "saveAllFilesBeforeGitOperations": true
+  },
+  "editor": {
+    "formatOnSave": true,
+    "saveOnFocusLost": true
+  },
+  "collaboration": {
+    "syncChanges": true,
+    "autoSaveForAI": true,
+    "saveBeforeAIAnalysis": true
+  }
+}
