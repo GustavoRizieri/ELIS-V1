@@ -1,0 +1,8 @@
+Info
+Estou usando um editor Trae-IDE, estou construindo meus projetos com ajuda da IA por ele.
+Estou construindo em duas pessoas ( Colaboração ) 1: Marduka e 2: Gustavo ( Eu ), ambos usando o editor Trae-IDE e amesma IA
+O primeiro Passo para funcionar o projeto da forma desejada é desenvolver um trabalho em colaboração, desta forma queremos usar o Github, mas o primeiro teste disso não funcionou porque a IA não consegue entender as alterações no projeto e as vezes não consegue nem trabahar com Github
+Vamos criarum Roadmap para fazer esse funcionamento funcionar com perfeição, mas vamos fazer passo a passo
+1 Criar o repositorio no Github ( faça correto e não va alem disso até ser dado o comando do proximo passo )
+
+2 Passo 2 antes de fazer o commit no Github o trae-ide não esta salvando os arquivos, ele tem que salvar automatico para fazer o commit ( resolva essa questão )
